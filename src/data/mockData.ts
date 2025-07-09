@@ -53,5 +53,7 @@ export const appCategories = [
   'Social',
   'Entertainment',
   'Development',
-  'Gaming'
+  'Gaming',
+  'Design',
+  'Other'
 ] as const; 

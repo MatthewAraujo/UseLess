@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Filter, Plus } from "lucide-react";
+import { Search, Filter, Plus, RefreshCw } from "lucide-react";
 import { ActiveTab } from "../../types/app";
 
 interface HeaderProps {
@@ -8,9 +8,10 @@ interface HeaderProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onAddApp: () => void;
+  onRefresh?: () => void;
 }
 
-export const Header = ({ activeTab, searchQuery, onSearchChange, onAddApp }: HeaderProps) => {
+export const Header = ({ activeTab, searchQuery, onSearchChange, onAddApp, onRefresh }: HeaderProps) => {
   return (
     <header className="h-16 border-b border-border flex items-center justify-between px-6">
       <div className="flex items-center space-x-4">
@@ -30,6 +31,12 @@ export const Header = ({ activeTab, searchQuery, onSearchChange, onAddApp }: Hea
               <Filter className="w-4 h-4 mr-2" />
               Filter
             </Button>
+            {onRefresh && (
+              <Button variant="outline" size="sm" onClick={onRefresh}>
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Refresh
+              </Button>
+            )}
           </div>
         )}
       </div>
