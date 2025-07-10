@@ -70,7 +70,7 @@ pub fn run() {
                     
                     // Wait for 30 seconds before next update
                     thread::sleep(Duration::from_secs(10));
-                }
+                } 
             });
 
             Ok(())
